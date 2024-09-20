@@ -1,9 +1,13 @@
+#include <iostream>
+
+#ifndef defined(BP_LIB_EXPORT)
 #if defined(_WIN32) || defined(_WIN64)
-#define LIB_EXPORT __declspec(dllexport)
+#define BP_LIB_EXPORT __declspec(dllexport)
 #elif defined(__linux__) || defined(__APPLE__)
-#define LIB_EXPORT __attribute__((visibility("default")))
+#define BP_LIB_EXPORT __attribute__((visibility("default")))
 #else
-#define LIB_EXPORT
+#define BP_LIB_EXPORT
+#endif
 #endif
 
 namespace easy_json
@@ -20,9 +24,9 @@ namespace easy_json
 
     extern "C"
     {
-        LIB_EXPORT int file_get_value_string(const char *file_path, const char *key_path, std::string &value);
-        LIB_EXPORT int file_get_value_int(const char *file_path, const char *key_path, int *value);
-        LIB_EXPORT int file_get_value_bool(const char *file_path, const char *key_path, bool *value);
+        BP_LIB_EXPORT int file_get_value_string(const char *file_path, const char *key_path, std::string &value);
+        BP_LIB_EXPORT int file_get_value_int(const char *file_path, const char *key_path, int *value);
+        BP_LIB_EXPORT int file_get_value_bool(const char *file_path, const char *key_path, bool *value);
     }
 
 }
