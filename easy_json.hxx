@@ -20,7 +20,7 @@ namespace easy_json
 
     extern "C"
     {
-        LIB_EXPORT int file_get_value_string(const char *file_path, const char *key_path, char *value, int value_size);
+        LIB_EXPORT int file_get_value_string(const char *file_path, const char *key_path, std::string &value);
         LIB_EXPORT int file_get_value_int(const char *file_path, const char *key_path, int *value);
         LIB_EXPORT int file_get_value_bool(const char *file_path, const char *key_path, bool *value);
     }
