@@ -68,7 +68,6 @@ namespace easy_json
         return NO_ERROR;
     }
 
-    // Получение целочисленного значения
     int file_get_value_int(const char *file_path, const char *key_path, int &value)
     {
         std::ifstream file(file_path);
