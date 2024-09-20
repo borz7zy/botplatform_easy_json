@@ -1,6 +1,6 @@
 #include <iostream>
 
-#ifndef defined(BP_LIB_EXPORT)
+#ifndef BP_LIB_EXPORT
 #if defined(_WIN32) || defined(_WIN64)
 #define BP_LIB_EXPORT __declspec(dllexport)
 #elif defined(__linux__) || defined(__APPLE__)
